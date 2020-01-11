@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvSmart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/vCenter"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="FLM当前创建VH个数 ： 0"
+            android:textColor="#000"
+            android:textSize="10sp" />
+
+        <View
+            android:id="@+id/vCenter"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tvLinear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/vCenter"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="LLM当前创建VH个数 ： 0"
+            android:textColor="#000"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvAdd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f0f0f0"
+        android:gravity="center"
+        android:text="Add"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <!--<com.aspsine.swipetoloadlayout.SwipeRefreshHeaderLayout-->
+            <!--android:id="@id/swipe_refresh_header"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:background="#ff0"-->
+            <!--android:layout_height="100dp" />-->
+
+            <www.lssc.com.common.view.recyclerview.SmartRecyclerView
+                android:id="@id/swipe_target"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!--<com.aspsine.swipetoloadlayout.SwipeLoadMoreFooterLayout-->
+            <!--android:id="@id/swipe_load_more_footer"-->
+            <!--android:background="#f0f"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp" />-->
+        </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+
+        <www.lssc.com.common.view.recyclerview.SmartRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>
